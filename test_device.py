@@ -5,7 +5,7 @@ import json
 import sys
 
 #define thingsboard
-host = "192.168.7.111"
+host = "http://localhost:8080"
 port = 1883
 token = sys.argv[1]
 sensor_data = {'temperature': 0, 'humidity': 0}
