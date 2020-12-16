@@ -1,4 +1,3 @@
-import logging
 # Importing models and REST client class from Community Edition version
 from tb_rest_client.rest_client_ce import *
 # Importing the API exception
@@ -20,11 +19,13 @@ password = "tenant"
 with RestClientCE(base_url=url) as rest_client:
     try:
         # Auth with credentials
-        while (
-        rest_client.login(username=username, password=password)
-        # creating a Device
-        device = Device(name="Thermometer 1", type="thermometer")
-        device = rest_client.save_device(device)
-        logging.info(" Device was created:\n%r\n", device)
+        number_devices = sys.argv[1]
+        while (number_devices!=0):
+            rest_client.login(username=username, password=password)
+            # creating a Device
+            temp = "NodeMCU " + str(number_devices)
+            device = Device(name="NodeMCU", type="thermometer")
+            device = rest_client.save_device(device)
+            number_devices -= 1
     except ApiException as e:
         logging.exception(e)
