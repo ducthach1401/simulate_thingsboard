@@ -1,8 +1,8 @@
-# simulate_thingsboard
+# Simulate thingsboard
 
 # pip requiremments
     pip3 install -r requirement.txt
-    
+
 # docker thingsboard
     docker-compose up
     docker-compose down
