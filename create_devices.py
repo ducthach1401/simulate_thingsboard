@@ -3,7 +3,7 @@ from tb_rest_client.rest_client_ce import *
 # Importing the API exception
 from tb_rest_client.rest import ApiException
 import sys
-
+import json
 # ThingsBoard REST API URL
 url = "http://localhost:8080"
 # Default Tenant Administrator credentials
@@ -18,13 +18,13 @@ with RestClientCE(base_url=url) as rest_client:
     number_devices = int(sys.argv[1])
     count_devices = 1;
     while (count_devices <= number_devices):
-        # creating a Device
         try:
+            # creating a Device
             temp = "NodeMCU" + str(count_devices)
             device = Device(name = temp, type="default")
             device = rest_client.save_device(device)
             count_devices += 1
+
         except ApiException as e:
             count_devices += 1
             number_devices += 1
-            
