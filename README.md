@@ -3,7 +3,7 @@
 # pip requiremments
     pip3 install -r requirement.txt
 
-# docker thingsboard
+# Docker thingsboard
     docker-compose up
     docker-compose down
 
