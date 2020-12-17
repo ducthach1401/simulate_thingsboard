@@ -23,6 +23,8 @@ try:
         sensor_data['temperature'] = random.randint(20,35)
         sensor_data['humidity'] = random.randint(50,100)
         client.publish('v1/devices/me/telemetry', json.dumps(sensor_data), 1)
+        print(token)
+        print(sensor_data)
         time.sleep(sleep_time)
 except KeyboardInterrupt:
     pass

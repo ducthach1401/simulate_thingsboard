@@ -23,6 +23,7 @@ with RestClientCE(base_url=url) as rest_client:
             temp = "NodeMCU" + str(count_devices)
             device = Device(name = temp, type="default")
             device = rest_client.save_device(device)
+            print("Create:", temp)
             count_devices += 1
 
         except ApiException as e:

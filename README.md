@@ -16,5 +16,6 @@ Python 3
 # Run simulate NodeMCU devices on thingsboard
     python3 test_device.py <token> (Send Data DHT11)
 
-# Or run all device: copy token device from thingsboard to token.txt and run 
+# Or run all device: copy token device from thingsboard to token.txt and run
+    chmod u+x test_device.py
     python3 run_simulate.py
